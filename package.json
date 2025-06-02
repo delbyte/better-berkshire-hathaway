@@ -32,11 +32,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
     "tailwindcss": "^4",
-<<<<<<< HEAD
-    "tw-animate-css": "^1.3.3",
-=======
     "tw-animate-css": "^1.3.2",
->>>>>>> 64205cba33e5f0186162ee480e6d8cd51f1e13d3
     "typescript": "^5"
   }
 }

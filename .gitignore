@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-=======
->>>>>>> 64205cba33e5f0186162ee480e6d8cd51f1e13d3
 # dependencies
 /node_modules
 /.pnp
