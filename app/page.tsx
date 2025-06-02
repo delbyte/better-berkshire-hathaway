@@ -1,103 +1,264 @@
-import Image from "next/image";
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import {
+  ArrowRight,
+  Building2,
+  TrendingUp,
+  Users,
+  Globe,
+  Award,
+  FileText,
+  Calendar,
+  BarChart3,
+  Shield,
+  Lightbulb,
+  Target,
+} from "lucide-react"
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex min-h-screen flex-col">
+      {/* Hero Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="space-y-2">
+                <Badge variant="outline" className="w-fit">
+                  Since 1965 • NYSE: BRK.A, BRK.B
+                </Badge>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  Building Value Through
+                  <span className="text-primary"> Long-Term Thinking</span>
+                </h1>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                  A diversified holding company focused on acquiring and operating businesses with exceptional economics
+                  and outstanding management teams.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Button size="lg" className="px-8">
+                  <TrendingUp className="mr-2 h-4 w-4" />
+                  View Performance
+                </Button>
+                <Button size="lg" variant="outline" className="px-8">
+                  <FileText className="mr-2 h-4 w-4" />
+                  Latest Report
+                </Button>
+              </div>
+              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-1">
+                  <Building2 className="h-4 w-4" />
+                  <span>60+ Operating Companies</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Users className="h-4 w-4" />
+                  <span>390,000+ Employees</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="relative">
+                <Image
+                  src="/placeholder.svg?height=550&width=550"
+                  width={550}
+                  height={550}
+                  alt="Berkshire Hathaway Building"
+                  className="rounded-lg object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg" />
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Key Metrics */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-6 lg:grid-cols-4 md:grid-cols-2">
+            {[
+              { label: "Market Cap", value: "$890B+", icon: BarChart3 },
+              { label: "Book Value Growth", value: "19.8%", icon: TrendingUp },
+              { label: "Years of Growth", value: "58", icon: Calendar },
+              { label: "Operating Companies", value: "60+", icon: Building2 },
+            ].map((metric, i) => (
+              <Card key={i} className="text-center">
+                <CardContent className="pt-6">
+                  <metric.icon className="h-8 w-8 mx-auto mb-2 text-primary" />
+                  <div className="text-2xl font-bold">{metric.value}</div>
+                  <p className="text-sm text-muted-foreground">{metric.label}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Access */}
+      <section className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Investor Resources</h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Access comprehensive information about our performance, strategy, and operations.
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-3 md:grid-cols-2">
+            {[
+              {
+                title: "Chairman's Message",
+                description: "Warren Buffett's annual letter to shareholders with insights and philosophy.",
+                icon: FileText,
+                href: "/message",
+                badge: "2024 Available",
+              },
+              {
+                title: "Annual Reports",
+                description: "Comprehensive financial statements and performance analysis.",
+                icon: BarChart3,
+                href: "/reports",
+                badge: "Updated May 2024",
+              },
+              {
+                title: "Operating Companies",
+                description: "Explore our diverse portfolio of wholly-owned subsidiaries.",
+                icon: Building2,
+                href: "/subs",
+                badge: "60+ Companies",
+              },
+              {
+                title: "Corporate Governance",
+                description: "Leadership structure, board composition, and governance principles.",
+                icon: Shield,
+                href: "/govern",
+                badge: "Transparency",
+              },
+              {
+                title: "Sustainability",
+                description: "ESG initiatives and our commitment to responsible business practices.",
+                icon: Globe,
+                href: "/sustainability",
+                badge: "ESG Focus",
+              },
+              {
+                title: "Owner's Manual",
+                description: "Essential reading for understanding our business philosophy.",
+                icon: Lightbulb,
+                href: "/owners",
+                badge: "Must Read",
+              },
+            ].map((item, i) => (
+              <Card key={i} className="group hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center justify-between">
+                    <item.icon className="h-8 w-8 text-primary" />
+                    <Badge variant="secondary">{item.badge}</Badge>
+                  </div>
+                  <CardTitle className="group-hover:text-primary transition-colors">{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button
+                    variant="outline"
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    asChild
+                  >
+                    <Link href={item.href}>
+                      Access Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Investment Philosophy */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="space-y-2">
+                <Badge variant="outline" className="w-fit">
+                  Our Philosophy
+                </Badge>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                  Time-Tested Investment Principles
+                </h2>
+                <p className="text-muted-foreground md:text-lg">
+                  For nearly six decades, we've followed a consistent approach: acquire wonderful businesses at fair
+                  prices and hold them forever.
+                </p>
+              </div>
+              <div className="space-y-4">
+                {[
+                  { icon: Target, title: "Long-term Focus", description: "We think in decades, not quarters" },
+                  {
+                    icon: Award,
+                    title: "Quality Businesses",
+                    description: "Strong competitive advantages and pricing power",
+                  },
+                  { icon: Users, title: "Exceptional Management", description: "Leaders who think like owners" },
+                ].map((principle, i) => (
+                  <div key={i} className="flex gap-3">
+                    <principle.icon className="h-6 w-6 text-primary mt-1" />
+                    <div>
+                      <h3 className="font-semibold">{principle.title}</h3>
+                      <p className="text-sm text-muted-foreground">{principle.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Button className="w-fit" asChild>
+                <Link href="/owners">
+                  Read Owner's Manual
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            <div className="flex items-center justify-center">
+              <Image
+                src="/placeholder.svg?height=400&width=600"
+                width={600}
+                height={400}
+                alt="Investment Philosophy"
+                className="rounded-lg object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Stay Informed</h2>
+              <p className="max-w-[600px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Get the latest updates on our performance, new acquisitions, and Warren Buffett's insights.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Button size="lg" variant="secondary" className="px-8" asChild>
+                <Link href="/news">Latest News</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-primary-foreground px-8" asChild>
+                <Link href="/reports">View Reports</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
