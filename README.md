@@ -1,6 +1,7 @@
 # Bettershire-Hathaway
 
 A modern, responsive landing and information platform for Berkshire Hathaway Inc., built with Next.js, React, and Tailwind CSS. This project provides a comprehensive, user-friendly experience for investors, shareholders, and the public, featuring key company information, reports, governance, sustainability, and more.
+Access the website - https://rebuild-private.vercel.app
 
 ---
 
